@@ -10,13 +10,12 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            string str = "Hello World";
-            var group = from l in str
-                        orderby l
-                        group l by l into y
-                        select y;
-            foreach (var l in group)
-                Console.WriteLine($"{l.Key} : {l.Count()}");
+            DayOfWeek dow;
+            var days = Enumerable.Range(0, 7).Select(x => ((DayOfWeek)x).ToString()).ToList();
+            foreach(var day in days)
+            {
+                Console.WriteLine(day);
+            }
         }
     }
 }
