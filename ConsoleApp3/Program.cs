@@ -21,6 +21,7 @@ namespace ConsoleApp3
             list.Add(0);
             list.Add(7);
             var group = from l in list
+                        orderby l
                         where l % 2 == 0
                         select l;
             foreach(var l in group)
