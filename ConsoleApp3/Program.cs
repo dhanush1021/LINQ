@@ -10,9 +10,9 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            string[] str = { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
-            var group = from l in str
-                        where l.StartsWith("A") && l.EndsWith("M")
+            List<int> list = new List<int>() { 55 ,200, 740, 76, 230 ,482, 95 };
+            var group = from l in list
+                        where l > 80
                         select l;
             foreach (var l in group)
             {
