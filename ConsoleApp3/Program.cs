@@ -10,11 +10,15 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            DayOfWeek dow;
-            var days = Enumerable.Range(0, 7).Select(x => ((DayOfWeek)x).ToString()).ToList();
-            foreach(var day in days)
+            List<int> list = new List<int>() { 5, 1, 9, 2, 3, 7, 4, 5, 6, 8, 7, 6, 3, 4, 5, 2 };
+            var group = from l in list
+                        group l by l into y
+                        let count = y.Count()
+                        let mul = y.Count()*y.Key
+                        select new {y.Key,count,mul};
+            foreach (var l in group)
             {
-                Console.WriteLine(day);
+                Console.WriteLine(l);
             }
         }
     }
